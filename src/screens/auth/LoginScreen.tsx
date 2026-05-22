@@ -90,7 +90,7 @@ export function LoginScreen({navigation}: Props) {
             <View>
               <View className="flex-row items-center gap-2 mb-2">
                 <Icon name="hat-chef" size={36} color="#f97316" />
-                <Text className="text-4xl font-bold text-primary-500">Receitas</Text>
+                <Text className="text-4xl font-bold text-primary-500">Panelinha</Text>
               </View>
               <Text className="text-2xl font-bold text-gray-800 mb-1">
                 Bem-vindo de volta!

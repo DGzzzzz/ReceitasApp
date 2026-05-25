@@ -1,6 +1,6 @@
-import React, {useState} from 'react';
-import {View, Text, TextInput, TouchableOpacity, Modal, FlatList} from 'react-native';
-import {IngredientFormData, UnitType, UNIT_OPTIONS, UNIT_LABELS} from '../types';
+import React, { useState } from 'react';
+import { View, Text, TextInput, TouchableOpacity, Modal, FlatList } from 'react-native';
+import { IngredientFormData, UnitType, UNIT_OPTIONS, UNIT_LABELS } from '../types';
 
 interface IngredientRowProps {
   ingredient: IngredientFormData;
@@ -9,7 +9,7 @@ interface IngredientRowProps {
   onRemove: (index: number) => void;
 }
 
-export function IngredientRow({ingredient, index, onChange, onRemove}: IngredientRowProps) {
+export function IngredientRow({ ingredient, index, onChange, onRemove }: IngredientRowProps) {
   const [unitPickerVisible, setUnitPickerVisible] = useState(false);
 
   return (
@@ -36,9 +36,9 @@ export function IngredientRow({ingredient, index, onChange, onRemove}: Ingredien
       <View className="flex-row gap-2">
         <TextInput
           className="border border-gray-300 rounded-lg px-3 py-2 bg-white text-sm text-gray-900 flex-1"
-          placeholder="Qtd."
+          placeholder="Qtd"
           placeholderTextColor="#9ca3af"
-          keyboardType="decimal-pad"
+          keyboardType="default"
           value={ingredient.quantity}
           onChangeText={text => onChange(index, 'quantity', text)}
         />
@@ -67,7 +67,7 @@ export function IngredientRow({ingredient, index, onChange, onRemove}: Ingredien
             <FlatList
               data={UNIT_OPTIONS}
               keyExtractor={item => item.value}
-              renderItem={({item}) => (
+              renderItem={({ item }) => (
                 <TouchableOpacity
                   className={`px-4 py-3 border-b border-gray-50 ${ingredient.unit === item.value ? 'bg-primary-50' : ''}`}
                   onPress={() => {
